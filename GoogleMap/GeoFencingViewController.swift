@@ -44,9 +44,10 @@ class GeoFencingViewController: UIViewController {
             content.title = title
             content.body = body
             let trigger: UNLocationNotificationTrigger = UNLocationNotificationTrigger(region: region, repeats: false)
- 
+
             let request: UNNotificationRequest = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+      
     }
     
     
@@ -94,11 +95,11 @@ extension GeoFencingViewController: CLLocationManagerDelegate{
             self.addNotification(region: region,title: "Abc",body: "User exit")
         }
     }
-    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        print("Enter")
-        self.addNotification(region: region,title: "abc", body: "user enter")
-
-    }
+//    func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+//        print("Enter")
+//        self.addNotification(region: region,title: "abc", body: "user enter")
+//
+//    }
 
 
 }
